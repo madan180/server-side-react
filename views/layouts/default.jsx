@@ -12,7 +12,7 @@ class DefaultLayout extends React.Component {
 
             <body>
                 <div className="container">
-                    <h1>Product Listing Page</h1>
+                    <h1>Product Listing Page NEW</h1>
                     {this.props.children}
                 </div>
             </body>
