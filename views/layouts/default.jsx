@@ -6,12 +6,15 @@ class DefaultLayout extends React.Component {
             <html>
             <head>
                 <title>{this.props.title}</title>
+                <link href="bootstrap.min.css" rel="stylesheet" />
                 <link href="style.css" rel="stylesheet" />
             </head>
 
             <body>
-                <h1>Newtonflash</h1>
-                {this.props.children}
+                <div className="container">
+                    <h1>Product Listing Page</h1>
+                    {this.props.children}
+                </div>
             </body>
             <script src="bundle.js"></script>
             </html>

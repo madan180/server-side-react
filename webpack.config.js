@@ -4,16 +4,19 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public/')
+    path: path.resolve(__dirname, 'public')
   },
   watch:true,
-  	module: {
-	  	rules: [
-		    {
-		      test: /\.js$/,
-		      exclude: /(node_modules|bower_components)/,
-		      use:'babel-loader'
-		    }
-	  ]
-	}
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader'
+          
+        }
+      }
+    ]
+  }
 };

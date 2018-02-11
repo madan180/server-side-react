@@ -36,11 +36,8 @@ const getUpdatedNavigation = (currentPage , data) => {
     let navigation = data.navigation.map ( (item,index) => {
                 if(item.label === currentPage){
                     return Object.assign({}, item, {selected:true})
-                     //item.selected=true;
-
                 }
                 return Object.assign({}, item);
-                //return item;
            });
 
     return {navigation};

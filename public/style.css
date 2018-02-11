@@ -21,3 +21,15 @@ li a.selected{
     background-color: darkcyan;
     color: white;
 }
+
+div[class^="col-sm-"]{
+    border: 1px solid;
+}
+
+.card{
+    width: 200px;
+    min-height: 200px;
+    background-color: #eee;
+    margin: 10px;
+    padding: 20px;
+}

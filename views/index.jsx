@@ -2,17 +2,17 @@ var React = require('react');
 var DefaultLayout = require('./layouts/default');
 var NavBar = require('./components/navigation-bar');
 
-class HelloMessage extends React.Component {
+class App extends React.Component {
     render() {
 
         return (
-        <DefaultLayout>
-            <NavBar selectedIndex="" data={this.props.navigation}></NavBar>
-            <div id="root">
+            <DefaultLayout>
+                <div id="root">
 
-            </div>
-        </DefaultLayout>);
+                </div>
+            </DefaultLayout>
+        );
     }
 }
 
-module.exports = HelloMessage;
+module.exports = App;
