@@ -5,7 +5,7 @@
       "image": "",
       "name": "arrow",
       "category": "shirt",
-      "price": 400,
+      "price": 100,
       "availableQuantity": 4,
       "desc": "Here is the description"
     },
@@ -14,7 +14,7 @@
       "image": "",
       "name": "polo",
       "category": "shirt",
-      "price": 400,
+      "price": 100,
       "availableQuantity": 4,
       "desc": "Here is the description"
     },
@@ -22,8 +22,8 @@
       "sku": 1231234,
       "image": "",
       "name": "levis",
-      "category": "shirt",
-      "price": 400,
+      "category": "trouser",
+      "price": 200,
       "availableQuantity": 4,
       "desc": "Here is the description"
     },
@@ -31,8 +31,8 @@
       "sku": 1231234,
       "image": "",
       "name": "US polo",
-      "category": "shirt",
-      "price": 400,
+      "category": "trouser",
+      "price": 200,
       "availableQuantity": 4,
       "desc": "Here is the description"
     },
@@ -40,8 +40,8 @@
       "sku": 1231234,
       "image": "",
       "name": "Indian Terran",
-      "category": "shirt",
-      "price": 400,
+      "category": "tshirt",
+      "price": 300,
       "availableQuantity": 4,
       "desc": "Here is the description"
     },
@@ -49,8 +49,8 @@
       "sku": 1231234,
       "image": "",
       "name": "UCB",
-      "category": "shirt",
-      "price": 400,
+      "category": "tshirt",
+      "price": 300,
       "availableQuantity": 4,
       "desc": "Here is the description"
     },
@@ -58,7 +58,7 @@
       "sku": 1231234,
       "image": "",
       "name": "arrow",
-      "category": "shirt",
+      "category": "kurta",
       "price": 400,
       "availableQuantity": 4,
       "desc": "Here is the description"
@@ -67,7 +67,7 @@
       "sku": 1231234,
       "image": "",
       "name": "UCB",
-      "category": "shirt",
+      "category": "kurta",
       "price": 400,
       "availableQuantity": 4,
       "desc": "Here is the description"

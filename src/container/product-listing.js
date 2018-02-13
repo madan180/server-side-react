@@ -14,6 +14,7 @@ export default class ProductListing extends React.Component{
             searchString : ""
         }
             this.searchHandler = this.searchHandler.bind(this);
+            this.filterHandler = this.filterHandler.bind(this);
     }
 
     componentDidMount(){
@@ -34,13 +35,26 @@ export default class ProductListing extends React.Component{
         })
     }
 
+    filterHandler(filterKey){
+        this.setState({
+            filterString:filterKey
+        })
+    }
+
     createCardList () {
         let searchString = this.state.searchString;
+        let filterString = this.state.filterString;
         let filteredCards = this.state.products;
 
         if(searchString !== ""){
             filteredCards = this.state.products.filter((item) => {
                 return item.name == searchString;
+            });
+        }
+
+        if(filterString!==undefined && filterString !== ""){
+            filteredCards = this.state.products.filter((item) => {
+                return item.category == filterString;
             });
         }
 
@@ -70,7 +84,7 @@ export default class ProductListing extends React.Component{
                 </div>
                 <div className="row">
                     <div className="col-sm-2">
-                        <Filter></Filter>
+                        <Filter filterHandler = {this.filterHandler}></Filter>
                     </div>
                     <div className="col-sm-10">
                         {
