@@ -18533,6 +18533,13 @@ var Filter = function (_React$Component) {
                 null,
                 "Filter ",
                 _react2.default.createElement("br", null),
+                _react2.default.createElement("input", { type: "radio", checked: this.state.filterString === "", onClick: function onClick(evt) {
+                        return _this2.onFilterClick(evt);
+                    }, onChange: function onChange(evt) {
+                        return _this2.onFilter(evt);
+                    }, value: "" }),
+                "All",
+                _react2.default.createElement("br", null),
                 _react2.default.createElement("input", { type: "radio", checked: this.state.filterString === "shirt", onClick: function onClick(evt) {
                         return _this2.onFilterClick(evt);
                     }, onChange: function onChange(evt) {
