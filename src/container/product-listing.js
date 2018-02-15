@@ -3,36 +3,30 @@ import Filter from '../components/filter';
 import ProductCard from '../components/product-card';
 import Search from '../components/search';
 import Sorting from '../components/sorting';
+import {connect} from 'react-redux';
+import PLPActions from '../actions/plp-actions';
 
-export default class ProductListing extends React.Component{
+class ProductListing extends React.Component{
 
     constructor(props){
         super(props);
 
         this.state = {
-            products: [ ],
             searchString : ""
-        }
-            this.searchHandler = this.searchHandler.bind(this);
-            this.filterHandler = this.filterHandler.bind(this);
+        };
+        this.searchHandler = this.searchHandler.bind(this);
+        this.filterHandler = this.filterHandler.bind(this);
     }
 
     componentDidMount(){
-        fetch("products.json")
-            .then((res)=>{
-                return res.json();
-            })
-            .then((data)=>{
-                this.setState({
-                    products : data.products
-                })
-            });
+        this.props.dispatch(PLPActions.getAllProducts());
     }
 
     searchHandler (searchKey){
         this.setState({
             searchString:searchKey
         })
+
     }
 
     filterHandler(filterKey){
@@ -44,16 +38,16 @@ export default class ProductListing extends React.Component{
     createCardList () {
         let searchString = this.state.searchString;
         let filterString = this.state.filterString;
-        let filteredCards = this.state.products;
+        let filteredCards = this.props.products;
 
         if(searchString !== ""){
-            filteredCards = this.state.products.filter((item) => {
+            filteredCards = this.props.products.filter((item) => {
                 return item.name == searchString;
             });
         }
 
         if(filterString!==undefined && filterString !== ""){
-            filteredCards = this.state.products.filter((item) => {
+            filteredCards = this.props.products.filter((item) => {
                 return item.category == filterString;
             });
         }
@@ -68,9 +62,6 @@ export default class ProductListing extends React.Component{
     }
 
     render(){
-
-
-
         return(
             <Fragment>
                 <div className="row">
@@ -96,3 +87,20 @@ export default class ProductListing extends React.Component{
     )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        products: state.products
+    }
+};
+
+const mapDispatchFunctionToProps = (dispatch)=>{
+    return {
+        dispatch
+    }
+};
+
+export default connect ( mapStateToProps, mapDispatchFunctionToProps)(ProductListing)
+
+
+

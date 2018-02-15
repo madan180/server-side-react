@@ -11,14 +11,14 @@ export default class Filter extends React.Component{
     }
 
     onFilterClick(evt){
-        debugger
+        
          this.setState({
             filterString: evt.target.value
         })
     }
 
     onFilter(evt){
-        debugger
+        
        
 
         this.props.filterHandler(evt.target.value);
