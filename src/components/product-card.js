@@ -1,5 +1,6 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 export default class ProductCard extends React.Component{
     render(){
@@ -19,4 +20,14 @@ export default class ProductCard extends React.Component{
 
     )
     }
+}
+
+
+  
+ProductCard.propTypes = {
+    data: PropTypes.shape({
+        
+        name : PropTypes.string,
+        price : PropTypes.number.isRequired
+      })
 }

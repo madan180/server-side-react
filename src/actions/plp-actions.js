@@ -76,11 +76,22 @@ const data = {
     ]
 };
 
+const searchAction = (data) => {
+    return {
+        type: "GET_DATA_SEARCH",
+        data : data
+    }
+};
+
 const getDataAction = (data) => {
     return {
         type: "GET_DATA",
         data : data
     }
+};
+
+let cacheData = {
+
 };
 
 const PLPActions = {
@@ -91,8 +102,22 @@ const PLPActions = {
                     return res.json();
                 })
                 .then((data)=>{
+                    cacheData =  data;
                     dispatch (getDataAction(data));
                 });
+        }
+    },
+    searchProducts : (key) => {
+        return (dispatch) => {
+                let searchData = [...cacheData.products];
+                if(key!==""){
+                    searchData =  searchData.filter(item =>{
+                        return (item.name.indexOf(key) >= 0)
+                    });
+                }
+               
+                    dispatch (searchAction({products:searchData}));
+                
         }
     }
 };

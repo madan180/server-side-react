@@ -11,9 +11,7 @@ class ProductListing extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            searchString : ""
-        };
+       
         this.searchHandler = this.searchHandler.bind(this);
         this.filterHandler = this.filterHandler.bind(this);
     }
@@ -23,34 +21,24 @@ class ProductListing extends React.Component{
     }
 
     searchHandler (searchKey){
-        this.setState({
-            searchString:searchKey
-        })
+        this.props.dispatch(PLPActions.searchProducts(searchKey))
 
     }
 
     filterHandler(filterKey){
         this.setState({
-            filterString:filterKey
+          //  filterString:filterKey
         })
     }
 
     createCardList () {
-        let searchString = this.state.searchString;
-        let filterString = this.state.filterString;
+       // let searchString = this.state.searchString;
+      //  let filterString = this.state.filterString;
         let filteredCards = this.props.products;
 
-        if(searchString !== ""){
-            filteredCards = this.props.products.filter((item) => {
-                return item.name == searchString;
-            });
-        }
+       
 
-        if(filterString!==undefined && filterString !== ""){
-            filteredCards = this.props.products.filter((item) => {
-                return item.category == filterString;
-            });
-        }
+        
 
         let cards = filteredCards.map((item, index) => {
                 return (
