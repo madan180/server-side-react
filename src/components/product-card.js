@@ -1,6 +1,7 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import style from './product-card.css';
 
 export default class ProductCard extends React.Component{
     render(){
@@ -8,7 +9,7 @@ export default class ProductCard extends React.Component{
         let card = this.props.data;
 
         return(
-            <div className="card col-sm-3" >
+            <div className={style.card +" col-sm-3"}  >
                 <img className="card-img-top" src={card.image} alt="Card image cap" />
                     <div className="card-body">
                         <h5 className="card-title">{card.name}</h5>

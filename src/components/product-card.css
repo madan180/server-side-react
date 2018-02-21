@@ -1,0 +1,9 @@
+.card{
+    background-color: aqua;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 200px;
+    min-height: 100px;
+}

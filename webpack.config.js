@@ -16,6 +16,20 @@ module.exports = {
           loader: 'babel-loader'
           
         }
+      },
+      {
+        test: /\.css$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          { loader: "style-loader" },
+          { 
+            loader: "css-loader",
+            options:{
+              modules : true,
+              localIdentName: 'satyam_[name]__[local]--[hash:base64:5]'
+            }
+           }
+        ]
       }
     ]
   }

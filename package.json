@@ -16,7 +16,9 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "css-loader": "^0.28.9",
     "nodemon": "^1.14.12",
+    "style-loader": "^0.20.2",
     "webpack": "^3.10.0"
   },
   "scripts": {
